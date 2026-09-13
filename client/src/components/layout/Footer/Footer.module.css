@@ -1,0 +1,134 @@
+.footer {
+  width: 100%;
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-cream);
+  padding: 5rem 0 2rem 0;
+  margin-top: auto;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: var(--spacing-2xl);
+  margin-bottom: 4rem;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-family: var(--font-family-display);
+  font-size: var(--text-3xl);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.brandDescription {
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 90%;
+}
+
+.columnTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--text-xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-bg-cream);
+}
+
+.linkList,
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footerLink {
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease-in-out);
+}
+
+.footerLink:hover,
+.footerLink:focus {
+  color: var(--color-accent-gold);
+}
+
+.contactItem {
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.socialIcons {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 248, 225, 0.2); /* faint cream border */
+  color: var(--color-bg-cream);
+  transition: all var(--motion-fast) var(--ease-in-out);
+}
+
+.socialLink:hover,
+.socialLink:focus {
+  background-color: var(--color-accent-gold);
+  border-color: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+}
+
+.bottomBar {
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 248, 225, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.copyright {
+  font-family: var(--font-family-body);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .footerGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .brandDescription {
+    max-width: 100%;
+  }
+}

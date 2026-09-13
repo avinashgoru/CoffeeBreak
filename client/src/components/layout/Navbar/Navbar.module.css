@@ -88,6 +88,34 @@
   color: var(--color-primary-dark);
 }
 
+/* Cart Styles */
+.cartLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  transition: color var(--motion-fast) ease;
+  margin-right: var(--spacing-sm);
+}
+
+.cartLink:hover,
+.cartActive {
+  color: var(--color-accent-gold);
+}
+
+.cartBadge {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .navLinks,

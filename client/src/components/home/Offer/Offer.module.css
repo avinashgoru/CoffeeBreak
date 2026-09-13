@@ -1,0 +1,129 @@
+.offerSection {
+  width: 100%;
+  background-color: var(--color-primary-medium); /* Slightly lighter to stand out */
+  padding: var(--spacing-section) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.offerContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  background-color: var(--color-primary-dark);
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  /* The container itself acts as a massive card inside the section */
+}
+
+/* Content Area */
+.contentWrapper {
+  padding: 4rem 4rem 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.offerLabel {
+  font-size: var(--text-4xl);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+.mainHeading {
+  font-family: var(--font-family-display);
+  font-size: 4rem; /* Massive typography for the offer */
+  color: var(--color-bg-cream);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-xl);
+  max-width: 90%;
+}
+
+.shopButton {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  background-color: var(--color-accent-gold);
+  border: 1px solid var(--color-accent-gold);
+  padding: 1rem 3rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--motion-fast) var(--ease-in-out);
+  cursor: pointer;
+}
+
+.shopButton:hover {
+  background-color: transparent;
+  color: var(--color-accent-gold);
+}
+
+/* Image Area */
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  position: relative;
+}
+
+.offerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .offerContainer {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+    gap: 0;
+  }
+
+  .contentWrapper {
+    padding: 3rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .imageWrapper {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contentWrapper {
+    padding: 2rem 1.5rem;
+  }
+
+  .mainHeading {
+    font-size: 3rem;
+  }
+
+  .offerLabel {
+    font-size: var(--text-3xl);
+  }
+
+  .imageWrapper {
+    min-height: 300px;
+  }
+}

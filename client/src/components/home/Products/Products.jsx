@@ -12,13 +12,7 @@ const Products = () => {
 
         <div className={styles.productGrid}>
           {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              name={product.name}
-              description={product.description}
-              price={product.price}
-              image={product.image}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>

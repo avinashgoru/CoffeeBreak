@@ -1,0 +1,110 @@
+.cartPage {
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--color-bg-cream);
+  padding: var(--spacing-section) 0;
+}
+
+.cartContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: flex-start;
+}
+
+/* Header & List */
+.cartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--color-primary-dark);
+  padding-bottom: var(--spacing-sm);
+}
+
+.cartTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--text-4xl);
+  color: var(--color-primary-dark);
+}
+
+.clearBtn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color var(--motion-fast) ease;
+}
+
+.clearBtn:hover {
+  color: #d32f2f;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empty State */
+.emptyCartContainer {
+  width: 100%;
+  min-height: 60vh;
+  background-color: var(--color-bg-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.emptyCartContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emptyTitle {
+  font-family: var(--font-family-display);
+  font-size: var(--text-4xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.emptyText {
+  font-family: var(--font-family-body);
+  font-size: var(--text-lg);
+  color: var(--color-primary-medium);
+  margin-bottom: var(--spacing-xl);
+  max-width: 400px;
+}
+
+.shopBtn {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-cream);
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1rem 2.5rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all var(--motion-fast) ease;
+}
+
+.shopBtn:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cartContainer {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+}
