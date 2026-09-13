@@ -1,0 +1,143 @@
+.storySection {
+  width: 100%;
+  background-color: var(--color-primary-dark);
+  padding: var(--spacing-section) 0;
+  display: flex;
+  justify-content: center;
+}
+
+.storyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.storyCard {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr; /* Image is slightly narrower than text side */
+  background-color: var(--color-primary-medium); /* Warm dark reddish-brown */
+  border-radius: 30px; /* Large pill-like rounded corners */
+  overflow: hidden; /* Ensure image respects border radius */
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  margin-bottom: var(--spacing-xl);
+  /* Optional subtle border */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.storyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Add subtle mask gradient to blend right edge if necessary, but reference seems to show a clean cut or soft fade. Let's do a clean cut as is standard for cards, or a very slight fade. */
+}
+
+.contentWrapper {
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  font-size: var(--text-5xl);
+  color: var(--color-bg-cream);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.textContent p {
+  font-family: var(--font-family-body);
+  font-size: 0.9rem; /* Small readable text */
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+.moreLink {
+  align-self: flex-end;
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text-main);
+  text-decoration: none;
+  transition: color var(--motion-fast) var(--ease-in-out);
+}
+
+.moreLink:hover {
+  color: var(--color-accent-gold);
+}
+
+/* Carousel Indicators */
+.carouselIndicators {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color var(--motion-fast) var(--ease-in-out);
+}
+
+.dot.active {
+  background-color: var(--color-bg-cream); /* Or gold depending on exact reference */
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .storyCard {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .imageWrapper {
+    height: 300px;
+  }
+
+  .contentWrapper {
+    padding: 2rem;
+  }
+
+  .moreLink {
+    margin-top: var(--spacing-md);
+  }
+}
+
+@media (max-width: 600px) {
+  .contentWrapper {
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: var(--text-4xl);
+  }
+
+  .textContent p {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,97 @@
+.navbar {
+  position: absolute; /* Overlays on hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: var(--z-nav);
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.logoIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* It's a generated jpeg with dark bg, circle crop helps blend it */
+  object-fit: cover;
+}
+
+.logoText {
+  font-size: var(--text-2xl);
+  color: var(--color-accent-gold);
+  line-height: 1;
+  padding-top: 5px; /* Adjust for script font baseline */
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.link {
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-main);
+  transition: color var(--motion-fast) var(--ease-in-out);
+}
+
+.link:hover,
+.link.active {
+  color: var(--color-accent-gold);
+}
+
+.auth {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.signIn {
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-main);
+  transition: color var(--motion-fast) var(--ease-in-out);
+}
+
+.signIn:hover {
+  color: var(--color-accent-gold);
+}
+
+.signUp {
+  font-family: var(--font-family-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-accent-gold);
+  padding: 0.4rem 1.5rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--motion-fast) var(--ease-in-out);
+}
+
+.signUp:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navLinks,
+  .auth {
+    display: none; /* Hide on mobile for now per Phase 1 scope 'do not over-engineer mobile menu' */
+  }
+}

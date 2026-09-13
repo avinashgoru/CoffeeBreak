@@ -1,0 +1,134 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary-dark);
+  padding-top: var(--header-height); /* Account for absolute navbar */
+  overflow: hidden; /* Prevent image bleed */
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr; /* ~45% / 55% split for image prominence */
+  gap: var(--spacing-2xl);
+  align-items: center;
+  height: 100%;
+}
+
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: var(--z-base);
+}
+
+.subheading {
+  font-family: var(--font-family-body);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-bottom: -1rem; /* Pull the script font up closer */
+  text-transform: capitalize;
+}
+
+.mainHeading {
+  font-size: clamp(6rem, 12vw, 10rem); /* Massive scale */
+  color: var(--color-bg-cream);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); /* Subtle depth */
+}
+
+.description {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 450px;
+  margin-bottom: var(--spacing-xl);
+}
+
+.ctaButton {
+  font-family: var(--font-family-body);
+  font-size: var(--text-base);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-accent-gold);
+  padding: 0.8rem 2.5rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--motion-normal) var(--ease-in-out);
+}
+
+.ctaButton:hover {
+  background-color: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+}
+
+.rightContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 140%; /* Oversize the image container to push it off-screen right */
+  right: -20%;
+  max-width: 900px;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  /* Add a gradient mask to fade the left edge of the image smoothly into the dark background */
+  mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .heroContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .imageWrapper {
+    width: 120%;
+    right: -10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: var(--spacing-xl);
+    padding-top: calc(var(--header-height) + var(--spacing-xl));
+  }
+
+  .leftContent {
+    align-items: center;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .rightContent {
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    right: 0;
+  }
+
+  .heroImage {
+    mask-image: linear-gradient(to top, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 80%, transparent 100%);
+  }
+}

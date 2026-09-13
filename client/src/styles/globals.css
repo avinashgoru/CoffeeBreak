@@ -1,0 +1,29 @@
+body {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-main);
+  font-family: var(--font-family-body);
+  overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--layout-max-width);
+  margin: 0 auto;
+  padding: 0 var(--layout-padding);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}

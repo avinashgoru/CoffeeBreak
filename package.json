@@ -1,0 +1,21 @@
+{
+  "name": "coffee-break",
+  "version": "1.0.0",
+  "description": "Coffee Break MERN Application",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "format": "prettier --write .",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "eslint": "^8.45.0",
+    "prettier": "^3.0.0"
+  }
+}

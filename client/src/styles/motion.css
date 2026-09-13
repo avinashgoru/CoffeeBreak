@@ -1,0 +1,32 @@
+:root {
+  /* Transition durations */
+  --motion-fast: 150ms;
+  --motion-normal: 300ms;
+  --motion-slow: 500ms;
+
+  /* Easing functions */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: var(--ease-in-out);
+  transition-duration: var(--motion-normal);
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: var(--ease-in-out);
+  transition-duration: var(--motion-normal);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

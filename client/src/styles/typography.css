@@ -1,0 +1,43 @@
+/* Google Fonts imports */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.script-font {
+  font-family: var(--font-family-script);
+  font-weight: 400;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+.text-base {
+  font-size: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+.text-2xl {
+  font-size: 1.5rem;
+}
+.text-3xl {
+  font-size: 2rem;
+}
+.text-4xl {
+  font-size: 2.5rem;
+}
+.text-5xl {
+  font-size: 3rem;
+}
